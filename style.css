@@ -1016,3 +1016,36 @@ html[dir="rtl"] .header-nav ul {
     box-shadow: none !important;
     border: 1px solid var(--accent-color);
 }
+
+
+/* style.css - (تعديلات وضع الموبايل) */
+
+@media (max-width: 992px) {
+    /* ... (التنسيقات الحالية تبقى كما هي) ... */
+
+    /* التعديل الجوهري: توسيط كل محتوى معلومات الاتصال في الموبايل */
+    .contact-info-wrapper {
+        text-align: center !important; /* توسيط العناوين الرئيسية h3 */
+    }
+
+    /* توسيط كل عنصر اتصال (الأيقونة والنص) */
+    .contact-info-item {
+        justify-content: center !important; /* توسيط الأفقي للأيقونة والنص */
+        /* إلغاء الـ margin-bottom: 30px; */
+        margin-bottom: 20px !important; 
+    }
+    
+    /* توسيط العناوين الفرعية (البريد الإلكتروني، الهاتف) */
+    .contact-info-item h4 {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    /* توسيط الروابط والنصوص المتبقية */
+    .contact-info-item span, .contact-info-item a {
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* ... (بقية التنسيقات) ... */
+}
