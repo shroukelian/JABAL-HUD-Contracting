@@ -48,13 +48,11 @@ header {
     background-color: var(--nav-bg);
     padding: 15px 0;
     position: fixed;
-    width: 100%; /* يجب أن يبقى 100% ليحمل الظل على عرض الشاشة بالكامل */
+    width: 100%;
     top: 0;
     z-index: 1000;
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
-    /* إضافة لون خلفية شفافة لجعل الشعار يبدو عائماً بشكل أفضل */
     background-color: transparent !important; 
-    padding: 0; /* إلغاء الـ padding العلوي */
+    padding: 0; 
 }
 
 .logo span::after, 
@@ -62,24 +60,21 @@ header {
     content: none !important;
     display: none !important;
 }
-/* إضافة Wrapper داخلي لتقييد وعزل محتوى الهيدر */
 .header-wrapper {
-    max-width: 1200px; /* نفس عرض الـ container */
-    background-color: var(--bg-light); /* الخلفية البيضاء الفعلية */
-    border-radius: 10px; /* انحناء بسيط في الزوايا السفلية */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل أقوى وجميل */
+    max-width: 1200px;
+    background-color: var(--bg-light);
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
     margin: 20px auto 0 auto; 
-    padding: 15px 25px; /* إضافة الحشوة الداخلية */
+    padding: 15px 25px; 
     
-    /* جعل الهيدر نفسه يتصرف كـ Flex Container لترتيب المحتوى */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* إلغاء الـ Header Container القديم إذا كان مستخدماً لتنسيق الـ Flexbox */
 header .container {
-    display: block !important; /* لضمان أن الـ Wrapper الجديد هو المسؤول عن التوسيط */
+    display: block !important; 
     padding: 0 !important;
 }
 .logo a {
@@ -101,11 +96,11 @@ header .container {
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.7); /* لون الظل هو لون الـ Accent Color */
+        box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.7);
     }
     70% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(184, 134, 11, 0); /* زيادة حجم الظل حتى يختفي */
+        box-shadow: 0 0 0 15px rgba(184, 134, 11, 0); 
     }
     100% {
         transform: scale(1);
@@ -125,45 +120,37 @@ header .container {
 
 /* Hero Section */
 #hero {
-    /* جعل الخلفية داكنة جداً (قريبة من الأسود) لتناسب التصميم المطلوب */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('images/photo1.jpeg'); 
     background-size: cover;
     background-position: center;
-    color: var(--bg-light); /* نص أبيض */
-    padding: 150px 0 120px 0; /* زيادة الحشوة السفلية لاستيعاب الانحناء */
+    color: var(--bg-light);
+    padding: 150px 0 120px 0;
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    position: relative; /* مهم لوضع الانحناء */
-        padding-top: 150px !important; /* سنعيد الـ Padding هنا فقط للنصوص */
+    position: relative; 
+        padding-top: 150px !important; 
 
 }
 .hero-wave {
     position: absolute;
-    bottom: -2px; /* لضمان تغطية الحافة بالكامل */
+    bottom: -2px;
     left: 0;
     width: 100%;
-    /* ارتفاع الـ SVG هو 320 في الـ ViewBox، سنقيده بـ 150px في CSS */
     height: 150px; 
     z-index: 500;
 }
-/* الانحناء (الـ Wave) - يتم إضافته كعنصر زائف (Pseudo Element) */
 #hero:after {
     content: '';
     position: absolute;
-    bottom: -1px; /* لضمان عدم وجود فراغ أبيض */
+    bottom: -1px;
     left: 0;
     width: 100%;
-    height: 150px; /* ارتفاع الانحناء */
-    background: var(--bg-light); /* لون الخلفية التالية (الأبيض) */
-    
-    /* الشكل الهندسي للانحناء (Wave shape) */
+    height: 150px; 
     clip-path: ellipse(120% 100% at 50% 100%);
-    /* يمكنك تجربة: polygon(0 0, 100% 0, 100% 100%, 0 70%); */
-    /* أو: ellipse(150% 100% at 50% 0%); لو كان الانحناء من الأعلى */
-    z-index: 500; /* ليظهر فوق الخلفية السوداء */
+    z-index: 500; 
    
 }
 
@@ -211,9 +198,9 @@ grid-template-columns: 1fr 1fr;    gap: 30px;
 
 .service-card i, .application-item i { 
     font-size: 2.5em; 
-    color: var(--accent-color); /* تطبيق لون البيج الذهبي بقوة */
+    color: var(--accent-color);
     margin-bottom: 15px; 
-    display: block; /* لضمان أن الأيقونة تأخذ سطر لوحدها ويتم توسيطها */
+    display: block; 
 }
 .service-card:hover, .application-item:hover {
     transform: translateY(-5px);
@@ -262,11 +249,11 @@ grid-template-columns: 1fr 1fr;    gap: 30px;
         width: 48%; /* A bit less than 50% to account for gap */
         margin-bottom: 40px; /* Keep vertical separation */
     }
-        .application-container-grid { /* تأكيد العرض العمودي في الموبايل */
+        .application-container-grid {
         display: block !important;
     }
  .logo span {
-        font-size: 30px !important; /* تكبير الحجم ليصبح 1em */
+        font-size: 30px !important; 
         white-space: nowrap; 
     }
 }
@@ -378,11 +365,11 @@ footer {
         display: none !important;
     }
     html[dir="rtl"] .header-actions-group .lang-btn-desktop {
-    margin-right: auto; /* لدفعه لجهة اليسار في الديسكتوب */
-    order: 2; /* جعله يأتي بعد زر طلب عرض سعر (لأن RTL) */
-    background-color: transparent !important; /* لجعله زر شفاف */
-    box-shadow: none !important; /* إلغاء الظل */
-    padding: 8px 12px !important; /* لجعله يبدو كزر تنقل عادي */
+    margin-right: auto;
+    order: 2;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    padding: 8px 12px !important; 
 }
 
 /* إبقاء زر عرض السعر في مكانه */
@@ -405,50 +392,36 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     .footer-social-links { text-align: center; }
     .footer-contact-info p { justify-content: center; }
 }
-/* Mobile Adjustments (992px) - هذا القسم يعمل بشكل صحيح */
 @media (max-width: 992px) {
-    /* ... (التنسيقات الحالية للموبايل تبقى كما هي) ... */
-    
-    /* Mobile: Ensure application cards stack and take full width */
     .application-card {
         width: 100% !important;
         margin-bottom: 30px; 
     }
-    .application-container-grid { /* تأكيد العرض العمودي في الموبايل */
+    .application-container-grid { 
         display: block !important;
     }
 }
 
 
-/* Desktop Fix: Force Flexbox and 50% width on large screens */
 @media (min-width: 993px) {
-    /* تطبيق Flexbox على الـ Container الذي يحوي البطاقات */
     .application-container-grid {
-        display: flex !important; /* قسر تطبيق Flex */
-        flex-wrap: wrap; /* للسماح للبطاقات بالانتقال إلى السطر التالي */
-        justify-content: space-between; /* توزيع المسافة بين البطاقات */
+        display: flex !important;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
     }
 
-    /* تطبيق 50% عرض لكل بطاقة (مع مراعاة الـ Gap) */
     .application-card {
-        /* calc(50% - 15px) = 50% للعرض و 15px للـ gap على كل جانب */
         flex-basis: calc(50% - 15px) !important;
-        width: calc(50% - 15px) !important; /* قسر تطبيق العرض */
-        margin-bottom: 30px !important; /* ترك مسافة بين الأسطر */
+        width: calc(50% - 15px) !important; 
+        margin-bottom: 30px !important; 
     }
-    
-    /* إلغاء الـ Gap الذي أضفناه في الـ HTML (Inline) ليعتمد على الـ CSS */
-    /* يمكنك إزالة الـ Inline style: gap: 30px; من en_services.html إذا أردت */
 }
 
-/* style.css - إضافة تنسيق Parallax */
 
-/* 1. تنسيق Parallax الثابت */
 .parallax-section {
-    /* يجب توفير صورة خلفية ذات جودة عالية هنا */
     background-image: url('images/photo7.jpeg'); 
-    min-height: 400px; /* لضمان وجود مساحة كافية للتمرير */
-    background-attachment: fixed; /* مفتاح تأثير البارالاكس */
+    min-height: 400px; 
+    background-attachment: fixed; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -457,10 +430,9 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     justify-content: center;
     text-align: center;
     position: relative;
-    z-index: 1; /* لتجنب التداخل مع أقسام أخرى */
+    z-index: 1; 
 }
 
-/* 2. طبقة تظليل فوق الصورة (لتحسين وضوح النص) */
 .parallax-section:before {
     content: "";
     position: absolute;
@@ -468,18 +440,17 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* طبقة تعتيم سوداء شفافة */
+    background: rgba(0, 0, 0, 0.6); 
     z-index: 2;
 }
 
-/* 3. تنسيق المحتوى داخل البارالاكس */
 .parallax-content {
-    z-index: 3; /* لضمان ظهور المحتوى فوق طبقة التظليل */
-    color: var(--bg-light); /* نص أبيض */
+    z-index: 3;
+    color: var(--bg-light);
     padding: 20px;
 }
 .parallax-content h2 {
-    color: var(--accent-color); /* بيج ذهبي */
+    color: var(--accent-color);
     font-size: 3em;
     margin-bottom: 20px;
     text-shadow: 2px 2px #000;
@@ -489,11 +460,8 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     font-weight: 700;
 }
 
-/* style.css - (إضافة تنسيق Call-to-Action Parallax) */
 
-/* 4. تنسيق قسم Call-to-Action Parallax (New Section) */
 .cta-parallax-section {
-    /* يجب توفير صورة خلفية لهذا القسم (مثل صورة الأيدي) */
     background-image: url('images/photo6.jpeg'); 
     min-height: 450px; 
     background-attachment: fixed; 
@@ -508,7 +476,6 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     padding: 50px 0;
 }
 
-/* 5. طبقة تظليل فوق الصورة (لتحسين وضوح النص والأزرار) */
 .cta-parallax-section:before {
     content: "";
     position: absolute;
@@ -516,12 +483,10 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     left: 0;
     width: 100%;
     height: 100%;
-    /* طبقة تعتيم خفيفة لإظهار الأزرار */
     background: rgba(0, 0, 0, 0.4); 
     z-index: 2;
 }
 
-/* 6. تنسيق المحتوى وأزرار الاتصال */
 .cta-content {
     z-index: 3;
     color: var(--bg-light);
@@ -529,7 +494,7 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     margin: 0 auto;
 }
 .cta-content h2 {
-    color: var(--bg-light); /* نص أبيض */
+    color: var(--bg-light);
     font-size: 2.5em;
     margin-bottom: 30px;
     text-shadow: 1px 1px #000;
@@ -548,184 +513,163 @@ html[dir="rtl"] .header-actions-group .consultation-btn:last-child {
     text-decoration: none !important;
 }
 
-/* تنسيق أزرار الاتصال (مستوحى من التصميم) */
 .cta-phone-btn {
-    background-color: #D9534F; /* أحمر/برتقالي */
+    background-color: #D9534F; 
     color: var(--bg-light);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .cta-email-btn {
-    background-color: var(--primary-color); /* أزرق داكن */
+    background-color: var(--primary-color); 
     color: var(--bg-light);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-/* style.css - (تعديلات وضع الموبايل) */
 
 @media (max-width: 992px) {
    
-    /* تعديل حجم الأزرار في الهيدر للموبايل (لضمان وجود مسافة كافية) */
     .consultation-btn {
-        font-size: 0.8em; /* تصغير خط زر Quote في الموبايل */
+        font-size: 0.8em; 
         padding: 8px 15px;
     }    
-    /* التأكد من أن الهيدر العائم في وضع الموبايل لا يسبب مشاكل */
     .header-wrapper {
-        margin: 10px auto 0 auto !important; /* تقليل الـ margin العلوي قليلاً */
-        max-width: 95% !important; /* زيادة العرض قليلاً ليتسع المحتوى */
+        margin: 10px auto 0 auto !important; 
+        max-width: 95% !important;
     }
 }
-/* style.css - (تعديلات وضع الموبايل) */
 
 @media (max-width: 992px) {
-    /* ... (التنسيقات الحالية تبقى كما هي) ... */
-
-    /* 1. تصغير اسم الشركة في الهيدر أكثر */
- 
-
-    /* 2. تصغير حجم العناوين في Hero Section */
     #hero h1 {
-        font-size: 2.5em !important; /* تصغير h1 */
+        font-size: 2.5em !important; 
     }
     #hero h2 {
-        font-size: 1.5em !important; /* تصغير h2 */
+        font-size: 1.5em !important; 
     }
     #hero p {
         font-size: 1em !important;
     }
     
-    /* 3. توسيط محتوى Hero Section */
+    /* 3. Hero Section */
     #hero {
-        text-align: center !important; /* توسيط النصوص والأزرار */
-        padding-top: 80px !important; /* رفع المحتوى قليلاً للأعلى */
+        text-align: center !important; 
+        padding-top: 80px !important; 
         padding-bottom: 120px !important; 
         text-align: center !important; 
     }
 
-    /* 4. توسيط الأزرار في Hero Section */
+    /* 4 Hero Section */
     .hero-content div {
         display: flex;
-        flex-direction: column; /* جعل الأزرار عمودية */
-        align-items: center; /* توسيط الأزرار عمودياً */
-        gap: 15px; /* مسافة بين الأزرار */
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;
     }
     
     .btn-primary, .btn-secondary {
-        width: 90%; /* إعطاء عرض محدد للأزرار في الموبايل */
+        width: 90%; 
         max-width: 300px;
         margin: 0 !important;
     }
     .services-grid, .applications-grid {
-        /* تحديد شبكة من عمود واحد فقط في شاشات الموبايل */
         grid-template-columns: 1fr;
         gap: 30px;
-        margin-top: 30px; /* تقليل الهامش العلوي قليلاً */
-        padding: 0 10px; /* إضافة حشوة خفيفة للمحتوى */
+        margin-top: 30px; 
+        padding: 0 10px;
     }
 
-    /* 1. توسيط البطاقة وتحديد عرضها الأقصى */
     .service-card, .application-item {
-        max-width: 400px; /* تحديد أقصى عرض للبطاقة */
-        width: 90% !important; /* ضمان العرض يكون معقولاً */
-        margin: 0 auto 30px auto !important; /* توسيط البطاقة أفقياً وترك هامش سفلي */
-        padding: 20px !important; /* تقليل الحشوة الداخلية */
+        max-width: 400px; 
+        width: 90% !important; 
+        margin: 0 auto 30px auto !important; 
+        padding: 20px !important; 
     }
 
-    /* 2. تصغير حجم النصوص داخل البطاقة */
     .service-card h3, .application-item h3 {
-        font-size: 1.2em; /* تصغير عنوان البطاقة */
+        font-size: 1.2em; 
         margin-bottom: 10px;
     }
     .service-card p, .application-item p {
-        font-size: 0.9em; /* تصغير فقرة البطاقة */
+        font-size: 0.9em;
     }
     
-    /* 3. تصغير حجم الأيقونات */
     .service-card i, .application-item i {
-        font-size: 2em; /* تصغير الأيقونة قليلاً */
+        font-size: 2em;
         margin-bottom: 10px;
     }
-    /* ... (بقية التنسيقات) ... */
 }
-@media (max-width: 600px) { /* نستخدم 600px هنا لأن الأزرار تتداخل حتى على التابلت الصغير */
+@media (max-width: 600px) { 
     .cta-buttons {
-        flex-direction: column; /* جعل الأزرار فوق بعضها البعض */
-        gap: 10px; /* تقليل المسافة بين الأزرار المكدسة */
+        flex-direction: column;
+        gap: 10px;
     }
     .cta-buttons a {
-        width: 100%; /* جعل الزر يأخذ العرض الكامل للمساحة المتاحة له */
-        max-width: 250px; /* عرض أقصى لضمان عدم تمدده بشكل مفرط */
-        margin: 0 auto; /* توسيط الأزرار العمودية */
+        width: 100%; 
+        max-width: 250px; 
+        margin: 0 auto; 
         min-width: unset;
     }
     
-    /* تصغير خط العنوان في قسم CTA Parallax */
     .cta-content h2 {
         font-size: 1.8em !important;
     }
     .container h1 {
-        font-size: 2em !important; /* تصغير حجم العنوان أكثر */
+        font-size: 2em !important; 
         line-height: 1.2;
     }
     
-    /* 2. تصغير وتوسيط البطاقات (Application Cards) */
+    /* (Application Cards) */
     .application-card {
-        max-width: 350px; /* تقليل أقصى عرض للبطاقة (كان 450px) */
-        width: 90% !important; /* ضمان العرض لا يزال 90% */
-        margin: 0 auto 30px auto !important; /* توسيط البطاقة أفقياً وترك هامش سفلي */
-        padding: 15px !important; /* تقليل الحشوة الداخلية (كانت 20px) */
+        max-width: 350px; 
+        width: 90% !important; 
+        margin: 0 auto 30px auto !important; 
+        padding: 15px !important; 
     }
 
-    /* 3. تصغير الأيقونة وعنوان البطاقة داخلياً */
     .application-card h3 {
-        font-size: 1.1em; /* تصغير عنوان البطاقة */
+        font-size: 1.1em; 
         margin-bottom: 10px;
     }
     .application-card img {
-        height: 200px !important; /* تصغير ارتفاع الصورة داخل البطاقة (كانت 250px) */
+        height: 200px !important;
     }
     .application-card ul {
         font-size: 0.9em;
     }
     .container h1 {
-        font-size: 2em !important; /* تصغير حجم العنوان أكثر */
+        font-size: 2em !important; 
         line-height: 1.2;
     }
     
-    /* 2. تصغير وتوسيط البطاقات (Application Cards) */
+    /* 2 (Application Cards) */
     .application-card {
-        max-width: 350px; /* تقليل أقصى عرض للبطاقة (كان 450px) */
-        width: 90% !important; /* ضمان العرض لا يزال 90% */
-        margin: 0 auto 30px auto !important; /* توسيط البطاقة أفقياً وترك هامش سفلي */
-        padding: 15px !important; /* تقليل الحشوة الداخلية (كانت 20px) */
+        max-width: 350px;
+        width: 90% !important;
+        margin: 0 auto 30px auto !important;
+        padding: 15px !important; 
     }
 
-    /* 3. تصغير الأيقونة وعنوان البطاقة داخلياً */
     .application-card h3 {
-        font-size: 1.1em; /* تصغير عنوان البطاقة */
+        font-size: 1.1em; 
         margin-bottom: 10px;
     }
     .application-card img {
-        height: 200px !important; /* تصغير ارتفاع الصورة داخل البطاقة (كانت 250px) */
+        height: 200px !important; 
     }
     .application-card ul {
         font-size: 0.9em;
     }
     .parallax-content h2 {
-        font-size: 2em !important; /* تصغير العنوان الرئيسي (H2) */
+        font-size: 2em !important; 
         line-height: 1.2;
         margin-bottom: 15px !important;
     }
     .parallax-content p {
-        font-size: 0.95em !important; /* تصغير الفقرة */
-        padding: 0 10px; /* إضافة حشوة جانبية خفيفة للنص */
+        font-size: 0.95em !important; 
+        padding: 0 10px;
     }
     .cta-buttons a {
-        /* ... (تنسيق الأزرار) ... */
-        font-size: 1em !important; /* تصغير خط الزر قليلاً */
+        font-size: 1em !important; 
     }
     
 }
-/* style.css - (إضافة تنسيق Floating Contact Buttons) */
 
 /* --- Floating Contact Buttons Container --- */
 .fixed-contact-buttons {
@@ -757,7 +701,7 @@ html[dir="rtl"] .fixed-contact-buttons {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    color: var(--bg-light); /* أيقونات بيضاء */
+    color: var(--bg-light); 
     font-size: 1.5em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, background-color 0.3s;
@@ -777,11 +721,9 @@ html[dir="rtl"] .fixed-contact-buttons {
 /* Language Button (Accent/Beige) */
 .lang-switch-btn { background-color: var(--accent-color); }
 
-/* إخفاء الأزرار العائمة في الديسكتوب */
 @media (min-width: 993px) {
 
 }
-/* إخفاء زر تبديل اللغة في الـ Header في الموبايل لتعويضه بالزر العائم */
 @media (max-width: 992px) {
     .header-actions-group .lang-btn-desktop {
         display: none !important;
@@ -792,47 +734,38 @@ html[dir="rtl"] .fixed-contact-buttons {
         display: none !important;
     }
 }
-/* style.css - قواعد RTL لضبط المسافات حول الأيقونات */
-
-/* عند استخدام أيقونة (i) قبل النص في RTL */
 html[dir="rtl"] .hero-actions-mobile-group a i,
 html[dir="rtl"] .parallax-content a i {
     margin-right: 0 !important;
-    margin-left: 10px !important; /* إضافة مسافة على يسار الأيقونة */
+    margin-left: 10px !important; 
 }
 
-/* في Footer وفي قسم Contact/About */
 html[dir="rtl"] .footer-contact-info p i,
 html[dir="rtl"] .contact-info-item i,
 html[dir="rtl"] .service-card i,
 html[dir="rtl"] .application-card i {
     margin-right: 0 !important;
-    margin-left: 10px !important; /* الأيقونة على اليمين، والمسافة على اليسار */
-    order: 2; /* جعل الأيقونة في نهاية سطر Flexbox */
+    margin-left: 10px !important; 
+    order: 2;
 }
 html[dir="rtl"] .contact-info-item div {
-    order: 1; /* جعل النص في بداية سطر Flexbox */
+    order: 1; 
 }
 
-/* زر تبديل اللغة النصي في Header في وضع RTL (Desktop) */
 html[dir="rtl"] .header-actions-group .lang-btn-desktop i {
     margin-right: 0 !important;
     margin-left: 8px !important;
 }
 @media (max-width: 992px) {
-    /* ... (التنسيقات الحالية تبقى كما هي) ... */
-
-    /* التعديل الجوهري: توسيط الفوتر في وضع الموبايل */
     .footer-grid {
         grid-template-columns: 1fr;
-        text-align: center; /* توسيط النصوص داخل الأعمدة */
+        text-align: center;
     }
 
     .footer-col {
         margin-bottom: 30px;
     }
     
-    /* توسيط محتوى الأعمدة الفردية */
     .footer-col h3 {
         text-align: center !important;
     }
@@ -840,24 +773,21 @@ html[dir="rtl"] .header-actions-group .lang-btn-desktop i {
         text-align: center !important;
     }
     
-    /* توسيط روابط الروابط السريعة (Quick Links) */
     .footer-col ul {
-        padding-right: 0 !important; /* إلغاء padding لـ RTL */
+        padding-right: 0 !important; 
         text-align: center !important;
     }
     .footer-col ul li a {
-        display: inline-block !important; /* السماح بتوسيط عنصر القائمة */
+        display: inline-block !important; 
     }
 
-    /* توسيط أيقونات التواصل الاجتماعي */
     .footer-social-links {
         text-align: center !important;
     }
     
-    /* توسيط معلومات الاتصال (لجعل الأيقونات والنص في المنتصف) */
     .footer-contact-info p {
-        justify-content: center !important; /* توسيط المحتوى الأفقي */
-        direction: ltr; /* جعل الأرقام والأيقونات تظهر في تسلسل صحيح قبل التوسيط */
+        justify-content: center !important; 
+        direction: ltr;
     }
     .footer-contact-info p span {
         margin-left: 5px !important;
@@ -866,38 +796,27 @@ html[dir="rtl"] .header-actions-group .lang-btn-desktop i {
     .main-nav-wrapper .lang-btn {
         display: none !important;
     }
-    /* ... (بقية التنسيقات) ... */
 }
-/* style.css - (تعديلات وضع RTL/Desktop لصفحة الخدمات) */
 
 @media (min-width: 993px) {
     
-    /* 1. تطبيق Flexbox على الـ Wrapper */
     .application-cards-wrapper {
         display: flex !important; 
         flex-wrap: wrap; 
-        /* التعديل هنا: استخدام Center لتوسيط البطاقات بدلاً من تباعدها */
         justify-content: center !important; 
         gap: 30px; 
         margin-top: 50px;
     }
 
-    /* 2. تطبيق عرض البطاقة */
     .application-card {
-        /* تحديد عرض البطاقة لتأخذ مساحة معقولة في التوسيط */
         width: 350px !important; 
-        flex-basis: auto !important; /* السماح بتغيير العرض */
+        flex-basis: auto !important; 
         margin-bottom: 30px !important; 
     }
 }
-/* style.css - (إضافة/تأكيد تنسيقات RTL) */
 
-/* 1. إصلاح محاذاة البطاقات في الديسكتوب RTL */
 @media (min-width: 993px) {
-    /* ... (تنسيقات البطاقات الحالية تبقى كما هي) ... */
-
     
-    /* جعل كل بطاقة تلتصق باليمين (بدون توسيط) */
     .application-card {
         margin-right: 0 !important;
         margin-left: 0 !important;
@@ -905,87 +824,68 @@ html[dir="rtl"] .header-actions-group .lang-btn-desktop i {
 }
 
 
-/* 2. تنسيق القوائم لـ RTL (في كل الأحجام) */
-/* نلغي نمط القائمة الافتراضي ونستخدم أيقونة لـ RTL */
+
 html[dir="rtl"] .application-card ul, 
 html[dir="rtl"] .service-card ul {
-    list-style-type: none !important; /* إلغاء النقطة السوداء الافتراضية */
+    list-style-type: none !important;
     padding-left: 0 !important;
-    padding-right: 15px !important; /* إضافة مسافة على اليمين */
+    padding-right: 15px !important; 
 }
 
-/* استخدام أيقونة Font Awesome بدلاً من النقطة السوداء */
 html[dir="rtl"] .application-card ul li, 
 html[dir="rtl"] .service-card ul li {
     position: relative;
-    padding-right: 15px; /* لإفساح مجال للأيقونة */
+    padding-right: 15px;
     text-align: right;
-    display: block; /* لضمان ظهور الـ ::before */
+    display: block; 
 }
 
-/* وضع الأيقونة قبل النص في RTL */
 html[dir="rtl"] .application-card ul li::before,
 html[dir="rtl"] .service-card ul li::before {
-    content: "\f111"; /* كود يونيكود لنقطة صغيرة (Solid Circle) */
+    content: "\f111"; 
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
     right: 0;
-    color: var(--primary-color); /* لون الأيقونة */
+    color: var(--primary-color); 
     font-size: 0.5em;
-    top: 0.6em; /* محاذاة رأسية للنص */
+    top: 0.6em;
 }
 
-/* 3. تنسيق محتوى البطاقة في الديسكتوب RTL (لإصلاح العرض بجانب بعضهما) */
 html[dir="rtl"] .application-card {
     text-align: right !important;
 }
 
-/* style.css - حل مشكلة توسيط الزر في CTA في RTL (الأقوى) */
 
 .page-section a.btn-primary, 
 .page-section a.btn-secondary {
-    /* ... (تنسيقات الزر العادية تبقى كما هي) ... */
     
-    /* 1. التعديل الجذري: تحويل الزر إلى كتلة وتوسيته بالهامش التلقائي */
     display: block !important;
-    width: 250px; /* تحديد عرض ثابت (أو max-width) */
+    width: 250px; 
     margin-right: auto !important;
     margin-left: auto !important;
     
-    /* 2. التأكد من توسيط النص داخلياً */
     text-align: center !important; 
     
-    /* إلغاء الـ Flexbox الذي قد يكون مُفعلاً في مكان آخر */
     display: block !important; 
 }
 
-/* في حالة CTA في ar_services.html و ar_index.html */
-/* يجب أن يكون الـ div الأب text-align: center; كما هو حالياً في ملف HTML */
-/* <div style="text-align: center; margin-top: 60px;"> */
 
-/* style.css - (إضافة قواعد RTL لعكس الهيدر) */
 
-/* تطبيق RTL على الـ Header Wrapper في وضع الديسكتوب */
 html[dir="rtl"] .header-wrapper {
-    /* عكس الترتيب على مستوى الـ Wrapper */
     flex-direction: row-reverse !important;
 }
 
-/* عكس ترتيب العناصر داخل الـ Main Nav Wrapper (التنقل والأزرار) */
 html[dir="rtl"] .main-nav-wrapper {
-    margin-right: auto !important; /* لدفع العناصر لليسار */
+    margin-right: auto !important; 
     margin-left: 0 !important;
     flex-direction: row-reverse !important;
 }
 
-/* عكس ترتيب الـ Logo مع باقي العناصر في الهيدر */
 html[dir="rtl"] .header-wrapper {
     justify-content: space-between;
-    /* نستخدم order على العناصر الداخلية في HTML لتسهيل الأمر */
 }
 
-/* تعديل خاص بوضع RTL على اللوجو والتنقل */
 html[dir="rtl"] .main-nav-wrapper {
     margin-left: 0;
     margin-right: auto;
@@ -994,22 +894,18 @@ html[dir="rtl"] .header-nav ul {
     direction: rtl;
     padding-right: 0;
 }
-/* style.css - (تعديل الأزرار في الهيدر) */
 
 .consultation-btn {
     background-color: var(--accent-color);
     color: var(--bg-light);
-    /* التعديل هنا: تقليل الـ padding وحجم الخط */
-    padding: 8px 15px; /* تم تقليل الـ padding من 10px 20px */
-    font-size: 0.8em; /* تم تقليل حجم الخط من 0.9em */
-    /* ... (بقية التنسيقات تبقى كما هي) ... */
+    padding: 8px 15px; 
+    font-size: 0.8em; 
     border-radius: 8px;
     font-weight: 700;
     box-shadow: 0 3px 6px rgba(184, 134, 11, 0.4);
     animation: pulse 2s infinite;
 }
 
-/* تعديل خاص لزر تبديل اللغة (حتى لا يتأثر بالـ Pulse) */
 .lang-btn-desktop {
     background-color: var(--bg-light) !important;
     color: var(--heading-color) !important;
@@ -1018,34 +914,26 @@ html[dir="rtl"] .header-nav ul {
 }
 
 
-/* style.css - (تعديلات وضع الموبايل) */
 
 @media (max-width: 992px) {
-    /* ... (التنسيقات الحالية تبقى كما هي) ... */
 
-    /* التعديل الجوهري: توسيط كل محتوى معلومات الاتصال في الموبايل */
     .contact-info-wrapper {
-        text-align: center !important; /* توسيط العناوين الرئيسية h3 */
+        text-align: center !important; 
     }
 
-    /* توسيط كل عنصر اتصال (الأيقونة والنص) */
     .contact-info-item {
-        justify-content: center !important; /* توسيط الأفقي للأيقونة والنص */
-        /* إلغاء الـ margin-bottom: 30px; */
+        justify-content: center !important; 
         margin-bottom: 20px !important; 
     }
     
-    /* توسيط العناوين الفرعية (البريد الإلكتروني، الهاتف) */
     .contact-info-item h4 {
         text-align: center !important;
         width: 100% !important;
     }
     
-    /* توسيط الروابط والنصوص المتبقية */
     .contact-info-item span, .contact-info-item a {
         text-align: center !important;
         display: block !important;
     }
 
-    /* ... (بقية التنسيقات) ... */
 }

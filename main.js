@@ -2,9 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ==========================================================
     // 1. AOS (Animate On Scroll) Initialization
-    // ==========================================================
     AOS.init({
         // Global settings:
         duration: 1100,   // Animation duration in milliseconds
